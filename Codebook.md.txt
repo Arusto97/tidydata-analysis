@@ -1,0 +1,47 @@
+# Codebook for Tidy Data
+
+## Overview
+
+This codebook describes the variables in the tidy dataset created from the "Human Activity Recognition Using Smartphones" dataset. The dataset has been processed to include only measurements of mean and standard deviation, and is organized with descriptive variable names and activity labels.
+
+## Dataset
+
+The dataset includes the following columns:
+  
+  1. **subject**: Identifier for the subject who performed the activity. It is an integer ranging from 1 to 30.
+
+2. **activityId**: Identifier for the activity performed. The activity IDs are mapped to descriptive activity labels:
+  - 1: WALKING
+- 2: WALKING_UPSTAIRS
+- 3: WALKING_DOWNSTAIRS
+- 4: SITTING
+- 5: STANDING
+- 6: LAYING
+
+3. **Variables for Measurements**: The dataset includes variables for the mean and standard deviation of various accelerometer and gyroscope measurements. These variables have been labeled with descriptive names following the transformations described below. 
+
+The following transformations were applied to the variable names:
+  - `^t` is replaced with "Time" to indicate that the measurement is in the time domain.
+- `^f` is replaced with "Frequency" to indicate that the measurement is in the frequency domain.
+- `Acc` is replaced with "Accelerometer" to specify that the measurement relates to accelerometer data.
+- `Gyro` is replaced with "Gyroscope" to specify that the measurement relates to gyroscope data.
+- `Mag` is replaced with "Magnitude" to indicate that the measurement is related to the magnitude of the signal.
+- `BodyBody` is replaced with "Body" to correct an anomaly in the dataset.
+
+## Summary of Transformations
+
+1. **Merging of Datasets**: Training and test datasets were combined to create a unified dataset.
+
+2. **Extracting Measurements**: Only measurements related to mean and standard deviation were selected.
+
+3. **Descriptive Activity Names**: Activity IDs were replaced with descriptive names to make the dataset more understandable.
+
+4. **Descriptive Variable Names**: Variable names were modified to be more descriptive and easier to interpret.
+
+## Final Tidy Dataset
+
+The final tidy dataset contains the average of each variable for each subject and activity combination. This is achieved by grouping the data by `subject` and `activityId`, and summarizing all measurements by their mean.
+
+## References
+
+- [Human Activity Recognition Using Smartphones Dataset](https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
